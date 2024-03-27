@@ -1,0 +1,6 @@
+
+terraform/.terraform.lock.hcl
+terraform/.terraform/modules/modules.json
+terraform/.terraform/providers/registry.terraform.io/hashicorp/google-beta/5.22.0/windows_386/terraform-provider-google-beta_v5.22.0_x5.exe
+terraform/.terraform/providers/registry.terraform.io/hashicorp/google/5.22.0/windows_386/terraform-provider-google_v5.22.0_x5.exe
+terraform/.terraform/providers/registry.terraform.io/hashicorp/random/3.6.0/windows_386/terraform-provider-random_v3.6.0_x5.exe
