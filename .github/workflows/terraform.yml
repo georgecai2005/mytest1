@@ -40,7 +40,9 @@ jobs:
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
-      working-directory: ./terraform 
+      working-directory: ./terraform
+      env:
+        TFVARS_FILE: "np.tfvars"
       run: terraform plan -var-file=${_TFVARS_FILE} -input=false 
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
@@ -48,8 +50,8 @@ jobs:
       # Note: It is recommended to set up a required "strict" status check in your repository for "Terraform Cloud". See the documentation on "strict" required status checks for more information: https://help.github.com/en/github/administering-a-repository/types-of-required-status-checks
     - name: Terraform Apply
       working-directory: ./terraform 
+      env:
+        TFVARS_FILE: "np.tfvars"
       run: terraform apply -auto-approve -var-file=${_TFVARS_FILE} -input=false
       env:
         GOOGLE_CREDENTIALS: ${{ secrets.GCP_SA_KEY }}
-      substitutions:
-        _TFVARS_FILE: np.tfvars
