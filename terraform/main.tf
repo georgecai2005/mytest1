@@ -1,12 +1,8 @@
-module "cloud-build-utility-gs" {
-  source                = "git::ssh://git@github.com/telus/tf-module-gcp-storage?ref=v0.3.0"
-  project_id            = var.project_id
-  bucket_name           = "${var.project_id}-cloud-build-storage"
-  lifecycle_type        = "Delete"
-  versioning_enabled    = "false"
-  force_destroy_enabled = "true"
-  lifecycle_params = {
-    "storage"     = "REGIONAL",
-    "delete_days" = "7"
-  }
+resource "google_storage_bucket" "bkt_qw_george-01" {
+  force_destroy               = false
+  location                    = var.region
+  name                        = "${var.project_id}-cloud-build-storage"
+  project                     = var.project_id
+  storage_class               = "STANDARD"
+  uniform_bucket_level_access = true
 }
