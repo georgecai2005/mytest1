@@ -20,7 +20,7 @@ terraform {
 
 provider "google" {
   # Configuration options
-  credentials = file("D:\\_CData\\Users\\Admin\\Downloads\\credible-art-418518-3ba1734ff618.json")
+  # credentials = file("D:\\_CData\\Users\\Admin\\Downloads\\credible-art-418518-3ba1734ff618.json")
   project     = "credible-art-418518"
   region      = "northamerica-northeast1"
 }
